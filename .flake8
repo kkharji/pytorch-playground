@@ -1,5 +1,5 @@
 [flake8]
 # https://pycodestyle.pycqa.org/en/latest/intro.html#configuration
 ignore = "E203,W503,W3,W2,E303,E113, E302, E305, E306"
-max-line-length = 88
+max-line-length = 100
 max-complexity = 18
