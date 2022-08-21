@@ -1,0 +1,106 @@
+[
+    {
+        "text": "Hi",
+        "label": "greeting"
+    },
+    {
+        "text": "Hey",
+        "label": "greeting"
+    },
+    {
+        "text": "How are you",
+        "label": "greeting"
+    },
+    {
+        "text": "Is anyone there?",
+        "label": "greeting"
+    },
+    {
+        "text": "Hello",
+        "label": "greeting"
+    },
+    {
+        "text": "Good day",
+        "label": "greeting"
+    },
+    {
+        "text": "Bye",
+        "label": "goodbye"
+    },
+    {
+        "text": "See you later",
+        "label": "goodbye"
+    },
+    {
+        "text": "Goodbye",
+        "label": "goodbye"
+    },
+    {
+        "text": "Thanks",
+        "label": "thanks"
+    },
+    {
+        "text": "Thank you",
+        "label": "thanks"
+    },
+    {
+        "text": "That's helpful",
+        "label": "thanks"
+    },
+    {
+        "text": "Thank's a lot!",
+        "label": "thanks"
+    },
+    {
+        "text": "Which items do you have?",
+        "label": "items"
+    },
+    {
+        "text": "What kinds of items are there?",
+        "label": "items"
+    },
+    {
+        "text": "What do you sell?",
+        "label": "items"
+    },
+    {
+        "text": "Do you take credit cards?",
+        "label": "payments"
+    },
+    {
+        "text": "Do you accept Mastercard?",
+        "label": "payments"
+    },
+    {
+        "text": "Can I pay with Paypal?",
+        "label": "payments"
+    },
+    {
+        "text": "Are you cash only?",
+        "label": "payments"
+    },
+    {
+        "text": "How long does delivery take?",
+        "label": "delivery"
+    },
+    {
+        "text": "How long does shipping take?",
+        "label": "delivery"
+    },
+    {
+        "text": "When do I get my delivery?",
+        "label": "delivery"
+    },
+    {
+        "text": "Tell me a joke!",
+        "label": "funny"
+    },
+    {
+        "text": "Tell me something funny!",
+        "label": "funny"
+    },
+    {
+        "text": "Do you know a joke?",
+        "label": "funny"
+    }
+]

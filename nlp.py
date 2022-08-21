@@ -1,5 +1,5 @@
 import numpy as np
-from typing import cast
+from typing import Callable, cast
 from nltk import word_tokenize
 from nltk.stem.porter import PorterStemmer
 from numpy._typing import NDArray
@@ -14,14 +14,14 @@ class NLP:
     def __init__(self):
         self.stemmer = PorterStemmer()
 
-    def tokenize(self, pattern: str) -> list[Word]:
+    def tokenize(self, pattern: str, filter_fn: Callable) -> list[Word]:
         words = word_tokenize(pattern)
-        return cast(list[Word], words)
+        return cast(list[Word], list(filter(filter_fn, words)))
 
     def stem(self, word: str) -> list[Word]:
         return self.stemmer.stem(word=word, to_lowercase=True)
 
-    def bag_of_words(self, tokenized_sentence, all_words) -> NDArray[float32]:
+    def bag(self, tokenized_sentence, all_words) -> NDArray[float32]:
         """
         return bag of words array:
         1 for each known word that exists in the sentence, 0 otherwise

@@ -5,7 +5,10 @@ import torch
 Label = NewType("Label", str)
 Word = NewType("Word", str)
 
-if torch.backends.mps.is_available():
+# Either it's not working correctly or metal actually slower
+USE_MPS = False
+
+if torch.backends.mps.is_available() and USE_MPS:
     DEVICE = "mps"
 elif torch.cuda.is_available():
     DEVICE = "cuda"

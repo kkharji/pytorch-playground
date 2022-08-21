@@ -7,7 +7,7 @@ nlp = NLP()
 
 def test_tokenize():
     input = "How long does shipping take?"
-    output = nlp.tokenize(input)
+    output = nlp.tokenize(input, lambda _: True)
     assert output == ["How", "long", "does", "shipping", "take", "?"]
 
 
@@ -21,7 +21,7 @@ def test_bag():
     sentence = ["hello", "how", "are", "you"]
     words = ["hi", "hello", "I", "you", "bye", "thank", "cool"]
     expected = [0, 1, 0, 1, 0, 0, 0]
-    output = nlp.bag_of_words(sentence, words)
+    output = nlp.bag(sentence, words)
     assert expected == list(output)
 
 
