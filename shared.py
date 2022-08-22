@@ -24,8 +24,7 @@ class TrainingData(TypedDict):
     words: list[Word]
     labels: list[Label]
 
+def notify(*args):
+    print(*args)
+    print("-" * 25)
 
-class Xy:
-    def __init__(self, words: list[Word], label: Label) -> None:
-        self.x = words
-        self.y = label

@@ -1,14 +1,10 @@
-# import pytest
-from nlp import NLP
-
-
-nlp = NLP()
+import nlp
 
 
 def test_tokenize():
     input = "How long does shipping take?"
-    output = nlp.tokenize(input, lambda _: True)
-    assert output == ["How", "long", "does", "shipping", "take", "?"]
+    output = nlp.tokenize(input)
+    assert output == ["How", "long", "does", "shipping", "take"]
 
 
 def test_stem():

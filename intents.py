@@ -23,4 +23,4 @@ def intent_to_raw_data() -> None:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 
-intent_to_raw_data()
+# intent_to_raw_data()
