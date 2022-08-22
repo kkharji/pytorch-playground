@@ -1,9 +1,6 @@
-from typing import NewType
+from typing import Any, NewType, TypedDict
 
 import torch
-
-Label = NewType("Label", str)
-Word = NewType("Word", str)
 
 # Either it's not working correctly or metal actually slower
 USE_MPS = False
@@ -14,6 +11,18 @@ elif torch.cuda.is_available():
     DEVICE = "cuda"
 else:
     DEVICE = "cpu"
+
+Label = NewType("Label", str)
+Word = NewType("Word", str)
+
+
+class TrainingData(TypedDict):
+    model_state: dict[str, Any]
+    input_size: int
+    hidden_size: int
+    output_size: int
+    words: list[Word]
+    labels: list[Label]
 
 
 class Xy:
