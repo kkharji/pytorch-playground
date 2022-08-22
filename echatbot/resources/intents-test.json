@@ -1,0 +1,18 @@
+[
+    {
+        "text": "Hello there",
+        "label": "greeting"
+    },
+    {
+        "text": "Whatsup",
+        "label": "greeting"
+    },
+    {
+        "text": "How you've been?",
+        "label": "greeting"
+    },
+    {
+        "text": "Talk to you later",
+        "label": "goodbye"
+    }
+]

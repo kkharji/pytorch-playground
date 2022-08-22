@@ -3,9 +3,16 @@ import torch
 import torch.nn as nn
 
 from dataset import ChatDataset
-from intents import Intent, get_intents
+from intents import Intent
 from model import NeuralNet
-from shared import TrainingData, Label, Word, DEVICE, notify
+from shared import (
+    DEFAULT_TRAIN_DATA_RESULT_PATH,
+    TrainingData,
+    Label,
+    Word,
+    DEVICE,
+    notify,
+)
 from torch.utils.data import DataLoader
 from torch.optim import Adam
 from torch import long
@@ -101,20 +108,19 @@ class Trainer:
                 if epoch + 1 == self.epochs_num:
                     print(f"Final Loss: {loss.item():.4f}")
                 else:
-                    print(f"Epoch [{epoch+1}/{self.epochs_num}]: Loss: {loss.item():.4f}")
+                    print(
+                        f"Epoch [{epoch+1}/{self.epochs_num}]: Loss: {loss.item():.4f}"
+                    )
 
         return model, dataset
 
-    def save(self, model: NeuralNet, dataset: ChatDataset) -> None:
+    def save(
+        self,
+        model: NeuralNet,
+        dataset: ChatDataset,
+        save_path=DEFAULT_TRAIN_DATA_RESULT_PATH,
+    ) -> None:
         "Serialize and save training resulting data"
 
-        save_path = "data.pth"
         torch.save(self.training_data(dataset, model), save_path)
         print(f"training complete. file saved to {save_path}")
-
-
-if __name__ == "__main__":
-    trainer = Trainer()
-    trainer.process(get_intents())
-    model, dataset = trainer.train()
-    trainer.save(model, dataset)

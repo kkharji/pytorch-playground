@@ -2,8 +2,11 @@ from typing import Any, NewType, TypedDict
 
 import torch
 
-# Either it's not working correctly or metal actually slower
+# WARN: Either it's not working correctly or metal actually slower
 USE_MPS = False
+
+DEFAULT_TRAIN_DATA_RESULT_PATH = "echatbot/resources/data.pth"
+DEFAULT_INTENTS_PATH = "echatbot/resources/intents.json"
 
 if torch.backends.mps.is_available() and USE_MPS:
     DEVICE = "mps"
@@ -24,7 +27,7 @@ class TrainingData(TypedDict):
     words: list[Word]
     labels: list[Label]
 
+
 def notify(*args):
     print(*args)
     print("-" * 25)
-

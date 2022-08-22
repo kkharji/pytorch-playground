@@ -1,6 +1,6 @@
 import json
 from typing import TypedDict
-from shared import Label
+from shared import DEFAULT_INTENTS_PATH, Label
 
 
 class Intent(TypedDict):
@@ -9,14 +9,14 @@ class Intent(TypedDict):
     responses: list[str]
 
 
-def get_intents() -> list[Intent]:
-    with open("intents.json", "r") as fp:
+def get_intents(path=DEFAULT_INTENTS_PATH) -> list[Intent]:
+    with open(path, "r") as fp:
         return json.load(fp)
 
 
-def intent_to_raw_data() -> None:
+def intent_to_raw_data(path=DEFAULT_INTENTS_PATH) -> None:
     data = []
-    for intent in get_intents():
+    for intent in get_intents(path):
         for pattern in intent["patterns"]:
             data.append({"text": pattern, "label": intent["label"]})
     with open("intents-raw.json", "w", encoding="utf-8") as f:
